@@ -38,8 +38,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             "address": "Street, City, State, Zip"
         };
     };
-    $scope.deleteListing = function(index) {
-      $scope.listings.splice(index,1);
+    $scope.deleteListing = function(item) {
+      var index = $scope.listings.indexOf(item);
+      $scope.listings.splice(index, 1);
     };
     $scope.showDetails = function(item) {
       $scope.detailedInfo = item;
