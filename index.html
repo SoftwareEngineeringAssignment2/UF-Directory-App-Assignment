@@ -27,13 +27,15 @@
                 <th>Building Name</th>
                 <th></th>
               </tr>
-              <!-- 
-
-                  Fill in the rest of the table:
-                      * populate the rows with the code and name of each listing
-                      * include a way to remove individual listings
-
-                --> 
+              <tr ng-repeat="listing in listings">
+                  <td ng-click="showDetails($index)">{{listing.code}}</td>
+                  <td ng-click="showDetails($index)">{{listing.name}}</td>
+                  <td>
+                    <button type="button" class="btn btn-default btn-xs" ng-click="deleteListing($index)">Delete
+                    </button>
+                  </td>
+              </tr>
+              
             </table>
           </div>
           <!-- 
@@ -41,6 +43,12 @@
               Write an HTML form that adds new listings to the directory 
 
             -->
+          <form>
+            <input type="text" ng-model="newListing.code">
+            <input type="text" ng-model="newListing.name">
+            <input type="text" ng-model="newListing.address">
+            <button ng-click="addListing()">Add Listing</button>
+          </form>
         </div>
         <div class="col-md-6">
           <div class="jumbotron">
@@ -51,6 +59,28 @@
                    * consider how to use ng-click within the the table to implement this feature
 
              -->
+            <table class="table table-condensed">
+              <tr>
+                <td>Code:</td>
+                <td>{{detailedInfo.code}}</td>
+              </tr>
+              <tr>
+                <td>Name:</td>
+                <td>{{detailedInfo.name}}</td>
+              </tr>
+              <tr>
+                <td>Latitude:</td>
+                <td>{{detailedInfo.coordinates.latitude}}</td>
+              </tr>
+              <tr>
+                <td>Longitude:</td>
+                <td>{{detailedInfo.coordinates.longitude}}</td>
+              </tr>
+              <tr>
+                <td>Address:</td>
+                <td>{{detailedInfo.address}}</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
