@@ -1,3 +1,4 @@
+document.body.style.backgroundColor = "#71FDFF";
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings', 
   function($scope, Listings) {
     $scope.listings = Listings;
@@ -38,8 +39,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             "address": "Street, City, State, Zip"
         };
     };
-    $scope.deleteListing = function(index) {
-      $scope.listings.splice(index,1);
+    $scope.deleteListing = function(item) {
+      removeItem(item);
     };
     $scope.showDetails = function(item) {
       $scope.detailedInfo = item;
