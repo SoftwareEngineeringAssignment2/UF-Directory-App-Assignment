@@ -19,6 +19,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             }, 
             "address": "Street, City, State, Zip"
         };
+    $scope.query = undefined;
+    $scope.searchBar = 'Search';
 
     /* 
       Implement these functions in the controller to make your application function 
@@ -41,6 +43,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     };
     $scope.showDetails = function(index) {
       $scope.detailedInfo = $scope.listings[index];
+    };
+    $scope.updateFilter = function(index) {
+      $scope.query = $scope.searchBar;
     };
   }
 ]);
