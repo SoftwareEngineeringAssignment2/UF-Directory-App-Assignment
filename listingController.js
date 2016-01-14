@@ -41,8 +41,8 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.deleteListing = function(index) {
       $scope.listings.splice(index,1);
     };
-    $scope.showDetails = function(index) {
-      $scope.detailedInfo = $scope.listings[index];
+    $scope.showDetails = function(item) {
+      $scope.detailedInfo = item;
     };
     $scope.updateFilter = function(index) {
       $scope.query = $scope.searchBar;

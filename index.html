@@ -28,8 +28,8 @@
                 <th></th>
               </tr>
               <tr ng-repeat="listing in listings | filter:query">
-                  <td ng-click="showDetails($index)">{{listing.code}}</td>
-                  <td ng-click="showDetails($index)">{{listing.name}}</td>
+                  <td ng-click="showDetails(listing)">{{listing.code}}</td>
+                  <td ng-click="showDetails(listing)">{{listing.name}}</td>
                   <td>
                     <button type="button" class="btn btn-default btn-xs" ng-click="deleteListing($index)">Delete
                     </button>
