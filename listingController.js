@@ -1,4 +1,4 @@
-document.body.style.backgroundColor = "#71FDFF";
+document.body.style.backgroundColor = "Turquoise";
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings', 
   function($scope, Listings) {
     $scope.listings = Listings;
